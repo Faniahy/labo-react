@@ -27,7 +27,7 @@ class ToDo extends Component {
         return this.state.items.map((item) => {
             return (
                 <div key={item}>
-                    {item} | <button value={item} onClick={this.deleteTodo.bind(this)}>X</button>
+                    {item} | <button className="btn btn-sm btn-danger" value={item} onClick={this.deleteTodo.bind(this)}>X</button>
                 </div>
             )
         })
@@ -45,10 +45,10 @@ class ToDo extends Component {
     render() {
         return (
             <div>
-                <h1>ToDo List</h1>
-                <form>
-                    <input value={this.state.userInput} onChange={this.onChange.bind(this)} type="text" placeholder="Tapez ici" />
-                    <button onClick={this.addTodo.bind(this)}>Ajouter</button>
+                <h1>ToDo List</h1><span className="badge badge-success">Oula</span>
+                <form className="form-group">
+                    <input className="form-control" value={this.state.userInput} onChange={this.onChange.bind(this)} type="text" placeholder="Tapez ici" required/>
+                    <button className="btn btn-sm btn-primary" type="submit" onClick={this.addTodo.bind(this)}>Ajouter</button>
                 </form>
                 <div>
                     {this.renderTodo()}
